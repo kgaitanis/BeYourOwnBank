@@ -9,7 +9,7 @@ from internal.password_to_key import password_to_key
 
 
 if __name__ == "__main__":
-    nKeys = input("Number of Keys required to decrypt: ")
+    nKeys = input("Number of Keys required to recompose the secret: ")
     keys = []
 
     for i in range(nKeys):

@@ -12,7 +12,7 @@ from internal.createPDF import createPDF
 
 if __name__ == "__main__":
     nKeys = input("Number of Keys: ")
-    minKeys = input("Number of keys required to decrypt: ")
+    minKeys = input("Number of keys required to recompose the secret: ")
     secret = raw_input("Secret: ")
     password = raw_input('Password: ')
     fernet = Fernet(password_to_key(password))
@@ -26,10 +26,11 @@ if __name__ == "__main__":
 
     print("These are the %s keys:"%nKeys)
     for i in range(nKeys):
+        print("-----------------------------------------")
         print('Key #%s:'%i)
+        print("-----------------------------------------")
         key = binascii.hexlify(keys[i].getvalue()).encode('UTF-8')
         print(key)
-        print("----------")
 
         # generate qr code
         img_filename = 'qr.png'
